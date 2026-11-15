@@ -21,25 +21,15 @@
         }
         .card-glass {
             background: #FFFFFF;
-            border: 1px solid rgba(234, 88, 12, 0.12);
+            border: 1px solid rgba(234, 88, 12, 0.14);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
-        }
-        /* AI Chat Widget Animation */
-        #aiChatBox {
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            transform-origin: bottom right;
-        }
-        #aiChatBox.closed {
-            opacity: 0;
-            transform: scale(0.9) translateY(15px);
-            pointer-events: none;
         }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
             <a href="#home" class="flex items-center gap-3">
                 <img src="logo.png" alt="ሎጎ" class="w-10 h-10 rounded-full object-cover border-2 border-orange-500 shadow-sm" onerror="this.style.display='none'">
@@ -59,7 +49,7 @@
                 <a href="#contact" class="hover:text-orange-600 transition" data-i18n="navContact">ድጋፍ እና እውቂያ</a>
             </nav>
 
-            <button type="button" onclick="toggleLanguage()" class="text-xs bg-stone-100 hover:bg-stone-200 text-stone-800 px-3.5 py-2 rounded-xl font-medium transition flex items-center gap-1.5 cursor-pointer shadow-2xs">
+            <button type="button" onclick="toggleLanguage()" class="text-xs bg-stone-100 hover:bg-stone-200 text-stone-800 px-3.5 py-2 rounded-xl font-medium transition flex items-center gap-1.5 cursor-pointer shadow-sm">
                 <i class="fa-solid fa-globe text-orange-600"></i> <span id="langLabel">English</span>
             </button>
         </div>
@@ -83,16 +73,16 @@
                 <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 bg-gradient-to-tr from-orange-500 to-amber-300 shadow-xl mb-6 bg-white">
                     <img src="logo.png" alt="ርኆቦት መንፈሳዊ ማህበር ሎጎ" class="w-full h-full object-cover rounded-full bg-white" onerror="this.src='https://via.placeholder.com/150?text=Logo'">
                 </div>
-                <span class="text-xs font-bold uppercase tracking-wider text-orange-700 bg-orange-100 px-3.5 py-1.5 rounded-full mb-4 shadow-2xs" data-i18n="heroBadge">የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ መንፈሳዊ ማህበር</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-orange-700 bg-orange-100 px-3.5 py-1.5 rounded-full mb-4 shadow-sm" data-i18n="heroBadge">የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ መንፈሳዊ ማህበር</span>
                 <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-4 tracking-tight" data-i18n="heroTitle">ርኆቦት መንፈሳዊ ማህበር</h1>
                 <p class="text-sm sm:text-base text-stone-600 max-w-xl mb-8 leading-relaxed italic" data-i18n="heroVerse">
                     «እግዚአብሔር አሁን ስፍራ አሰፋልን፥ በምድርም ላይ እንበዛለን።» (ኦሪት ዘፍጥረት 26:22)
                 </p>
                 <div class="flex flex-wrap justify-center gap-3">
-                    <button type="button" onclick="toggleAiChat()" class="spiritual-gradient text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl shadow-md hover:opacity-95 transition flex items-center gap-2 cursor-pointer">
+                    <button type="button" onclick="openAiChat()" class="spiritual-gradient text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl shadow-md hover:opacity-95 transition flex items-center gap-2 cursor-pointer">
                         <i class="fa-solid fa-robot"></i> <span data-i18n="heroAiBtn">ስለ ማህበሩ AI ረዳትን ይጠይቁ</span>
                     </button>
-                    <a href="#contact" class="bg-white border border-stone-300 hover:border-orange-500 text-stone-800 text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl shadow-xs transition" data-i18n="heroBtn2">ድጋፍ ያድርጉ</a>
+                    <a href="#contact" class="bg-white border border-stone-300 hover:border-orange-500 text-stone-800 text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl shadow-sm transition" data-i18n="heroBtn2">ድጋፍ ያድርጉ</a>
                 </div>
             </div>
         </section>
@@ -105,7 +95,7 @@
             </div>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="card-glass p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-xl mb-4 shadow-2xs">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <h3 class="font-bold text-lg text-stone-900 mb-2.5" data-i18n="visionTitle">ራዕያችን (Our Vision)</h3>
@@ -114,7 +104,7 @@
                     </p>
                 </div>
                 <div class="card-glass p-7 rounded-3xl">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4 shadow-2xs">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-hands-praying"></i>
                     </div>
                     <h3 class="font-bold text-lg text-stone-900 mb-2.5" data-i18n="missionTitle">ተልዕኳችን (Our Mission)</h3>
@@ -167,50 +157,31 @@
             </div>
         </section>
 
-        <!-- 4. GALLERY SECTION -->
+        <!-- 4. GALLERY SECTION (ከስሩ ያለው ጽሁፍ የጠፋ ንጹህ ጋለሪ) -->
         <section id="gallery" class="py-14 px-4 max-w-5xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-2xl sm:text-3xl font-bold text-stone-900 mb-2" data-i18n="galleryTitle">የማህበራችን ጋለሪ (ፎቶዎች)</h2>
-                <p class="text-xs sm:text-sm text-stone-500" data-i18n="gallerySub">የአገልግሎት ጊዜያት እና መርሃ ግብሮች ምስሎች ከነማብራሪያቸው</p>
                 <div class="w-12 h-1 bg-orange-500 mx-auto rounded-full mt-3"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <!-- Photo Card 1 -->
-                <div class="card-glass rounded-3xl overflow-hidden flex flex-col">
-                    <div class="aspect-4/3 bg-stone-100 overflow-hidden">
-                        <img src="photo1.jpg" alt="አገልግሎት 1" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1543807535-eceef0bc6599?q=80&w=500&auto=format&fit=crop'">
-                    </div>
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-sm text-stone-900 mb-1.5" data-i18n="gal1Title">ታቦትን ስንሸኝ</h3>
-                        <p class="text-xs text-stone-600 leading-relaxed" data-i18n="gal1Desc">ታቦትን ከጥምቀተ ባህር ወደ ማደሪያው አምሮብን አንድ ሆነን ስንሸኝ።</p>
-                    </div>
+                <!-- Photo 1 -->
+                <div class="card-glass rounded-3xl overflow-hidden aspect-square">
+                    <img src="photo1.jpg" alt="ፎቶ 1" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1543807535-eceef0bc6599?q=80&w=500&auto=format&fit=crop'">
                 </div>
 
-                <!-- Photo Card 2 -->
-                <div class="card-glass rounded-3xl overflow-hidden flex flex-col">
-                    <div class="aspect-4/3 bg-stone-100 overflow-hidden">
-                        <img src="photo2.jpg" alt="አገልግሎት 2" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=500&auto=format&fit=crop'">
-                    </div>
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-sm text-stone-900 mb-1.5" data-i18n="gal2Title">ታቦታትን እያስገባን</h3>
-                        <p class="text-xs text-stone-600 leading-relaxed" data-i18n="gal2Desc">ታቦታትን ይዘን መተን ህዝቡን እየባረኩ።</p>
-                    </div>
+                <!-- Photo 2 -->
+                <div class="card-glass rounded-3xl overflow-hidden aspect-square">
+                    <img src="photo2.jpg" alt="ፎቶ 2" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=500&auto=format&fit=crop'">
                 </div>
 
-                <!-- Photo Card 3 -->
-                <div class="card-glass rounded-3xl overflow-hidden flex flex-col">
-                    <div class="aspect-4/3 bg-stone-100 overflow-hidden">
-                        <img src="photo3.jpg" alt="አገልግሎት 3" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=500&auto=format&fit=crop'">
-                    </div>
-                    <div class="p-5 flex-grow">
-                        <h3 class="font-bold text-sm text-stone-900 mb-1.5" data-i18n="gal3Title">ጥምቀት ለከተራ</h3>
-                        <p class="text-xs text-stone-600 leading-relaxed" data-i18n="gal3Desc">የ ጥምቀት ስራችንን ጨርሰን ታቦትን እየተቀበልን。</p>
-                    </div>
+                <!-- Photo 3 -->
+                <div class="card-glass rounded-3xl overflow-hidden aspect-square">
+                    <img src="photo3.jpg" alt="ፎቶ 3" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=500&auto=format&fit=crop'">
                 </div>
             </div>
 
-            <!-- Telegram More Photos Call-to-Action -->
+            <!-- Telegram More Photos Link -->
             <div class="mt-8 bg-sky-50/90 border border-sky-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-3 text-center sm:text-left">
                     <div class="w-11 h-11 rounded-xl bg-sky-500 text-white flex items-center justify-center text-xl shrink-0">
@@ -275,23 +246,43 @@
             </div>
         </section>
 
-        <!-- 6. CONTACT & DONATION SECTION -->
+        <!-- 6. CONTACT, 4 BANKS & SOCIAL MEDIA LINKS -->
         <section id="contact" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="card-glass p-6 sm:p-10 rounded-3xl border border-orange-100 shadow-sm">
                 <div class="text-center mb-10">
                     <h2 class="text-2xl sm:text-3xl font-bold text-stone-900 mb-2" data-i18n="contactTitle">ድጋፍ እና እውቂያ</h2>
-                    <p class="text-xs sm:text-sm text-stone-500" data-i18n="contactSub">ለማህበራችን አገልግሎት ድጋፍ ለማድረግ ወይም መልዕክት ለመላክ</p>
+                    <p class="text-xs sm:text-sm text-stone-500" data-i18n="contactSub">ለማህበራችን አገልግሎት ድጋፍ ለማድረግ ወይም በማህበራዊ ሚዲያ ለመከታተል</p>
                 </div>
 
-                <div class="grid lg:grid-cols-5 gap-8">
-                    <!-- 4 Bank Accounts -->
-                    <div class="lg:col-span-3 bg-stone-50/80 p-5 sm:p-6 rounded-2xl border border-stone-200/80">
-                        <h3 class="font-bold text-base text-stone-900 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-building-columns text-orange-600"></i> <span data-i18n="bankHeader">የድጋፍ ባንክ አካውንቶች (4 አማራጮች)</span>
-                        </h3>
-                        
-                        <div class="grid sm:grid-cols-2 gap-3 mb-5">
-                            <!-- Bank 1: CBE -->
-                            <div class="bg-white p-3.5 rounded-xl border border-stone-200 shadow-2xs">
-                                <p class="text-[11px] font-bold text-orange-700 mb-1">1. የኢትዮጵያ ንግድ ባንክ (CBE)</p>
-                       
+                <!-- 4 Bank Accounts Grid -->
+                <div class="bg-stone-50 p-5 sm:p-6 rounded-2xl border border-stone-200 mb-8">
+                    <h3 class="font-bold text-base text-stone-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-building-columns text-orange-600"></i> <span data-i18n="bankHeader">የድጋፍ ባንክ አካውንቶች (4 ባንኮች)</span>
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                        <!-- Bank 1: CBE -->
+                        <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                            <p class="text-xs font-bold text-orange-700 mb-1.5">1. የኢትዮጵያ ንግድ ባንክ (CBE)</p>
+                            <div class="flex justify-between items-center gap-2">
+                                <span id="acc1" class="font-mono text-sm font-bold text-stone-900">1000000000001</span>
+                                <button type="button" onclick="copyText('acc1')" class="text-xs bg-stone-900 text-white px-3 py-1.5 rounded-lg hover:bg-stone-800 cursor-pointer transition" data-i18n="copyBtn">ቅዳ</button>
+                            </div>
+                        </div>
+
+                        <!-- Bank 2: Abyssinia -->
+                        <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                            <p class="text-xs font-bold text-amber-700 mb-1.5">2. አቢሲኒያ ባንክ (Bank of Abyssinia)</p>
+                            <div class="flex justify-between items-center gap-2">
+                                <span id="acc2" class="font-mono text-sm font-bold text-stone-900">2000000000002</span>
+                                <button type="button" onclick="copyText('acc2')" class="text-xs bg-stone-900 text-white px-3 py-1.5 rounded-lg hover:bg-stone-800 cursor-pointer transition" data-i18n="copyBtn">ቅዳ</button>
+                            </div>
+                        </div>
+
+                        <!-- Bank 3: Awash -->
+                        <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
+                            <p class="text-xs font-bold text-blue-700 mb-1.5">3. አዋሽ ባንክ (Awash Bank)</p>
+                            <div class="flex justify-between items-center gap-2">
+                                <span id="acc3" class="font-mono text-sm font-bold text-stone-900">3000000000003</span>
+                                <button type="button" onclick="copyText('acc3')" class="text-xs bg-stone-900 text-white px-3 py-1.5 rounded-lg hover:bg-stone-800 cursor-pointer transition" data-i18n="copyBtn">ቅዳ</button>
+                            
