@@ -139,7 +139,7 @@
             </div>
         </section>
 
-        <!-- 3. GALLERY SECTION (የድሮ መርሃ ግብሮች እና ጉዞዎች ፎቶዎች) -->
+        <!-- 3. GALLERY SECTION (የድሮ ትውስታዎች) -->
         <section id="gallery" class="py-14 px-4 max-w-5xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-2xl sm:text-3xl font-bold text-stone-900 mb-2" data-i18n="galleryTitle">የማህበራችን ጋለሪ (የድሮ ትውስታዎችና መርሃ ግብሮች)</h2>
@@ -147,21 +147,18 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <!-- Archive Photo 1 -->
                 <div class="card-glass rounded-3xl overflow-hidden aspect-square relative group">
                     <img src="archive1.jpg" alt="የድሮ መርሃ ግብር 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1543807535-eceef0bc6599?q=80&w=500&auto=format&fit=crop'">
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-xs font-medium">
                         <span data-i18n="gal1Text">የመሥራቾች እና አባላት ሕብረት (2019 ዓ.ም)</span>
                     </div>
                 </div>
-                <!-- Archive Photo 2 -->
                 <div class="card-glass rounded-3xl overflow-hidden aspect-square relative group">
                     <img src="archive2.jpg" alt="የድሮ መርሃ ግብር 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=500&auto=format&fit=crop'">
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-xs font-medium">
                         <span data-i18n="gal2Text">የገዳማት ጉዞ እና በጎ አድራጎት</span>
                     </div>
                 </div>
-                <!-- Archive Photo 3 -->
                 <div class="card-glass rounded-3xl overflow-hidden aspect-square relative group">
                     <img src="archive3.jpg" alt="የድሮ መርሃ ግብር 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=500&auto=format&fit=crop'">
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-xs font-medium">
@@ -235,7 +232,7 @@
             </div>
         </section>
 
-        <!-- 5. CONTACT, 2 BANKS & ALL 5 SOCIAL MEDIA LINKS -->
+        <!-- 5. CONTACT, 2 BANKS (WEGAGEN & AHADU) WITH LOGOS & 5 SOCIAL MEDIA LINKS -->
         <section id="contact" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="card-glass p-6 sm:p-10 rounded-3xl border border-orange-100 shadow-sm">
                 <div class="text-center mb-10">
@@ -243,34 +240,32 @@
                     <p class="text-xs sm:text-sm text-stone-500" data-i18n="contactSub">ለማህበራችን አገልግሎት ድጋፍ ለማድረግ ወይም በማህበራዊ ሚዲያ ለመከታተል</p>
                 </div>
 
-                <!-- Bank Accounts Grid (Ahadu & Wegagen with Copy Feature & Image Space) -->
+                <!-- Bank Accounts Grid -->
                 <div class="bg-stone-50 p-5 sm:p-6 rounded-2xl border border-stone-200 mb-8">
                     <h3 class="font-bold text-base text-stone-900 mb-4 flex items-center gap-2">
                         <i class="fa-solid fa-building-columns text-orange-600"></i> <span data-i18n="bankHeader">የድጋፍ ባንክ አካውንቶች</span>
                     </h3>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <!-- Bank 1: Ahadu Bank -->
+                        <!-- Bank 1: Wegagen Bank (የመጀመሪያው ወጋገን ባንክ) -->
                         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm flex items-center gap-3.5">
-                            <!-- እዚህ ቦታ የባንክዎን ፎቶ/ሎጎ መቀየር ይችላሉ (ahadu.jpg) -->
-                            <img src="ahadu.jpg" alt="አሀዱ ባንክ" class="w-14 h-14 rounded-2xl object-cover border border-stone-200 shrink-0 bg-red-50" onerror="this.src='https://via.placeholder.com/60?text=Ahadu'">
+                            <img src="wegagen.jpg" alt="ወጋገን ባንክ" class="w-14 h-14 rounded-2xl object-cover border border-stone-200 shrink-0 bg-orange-50" onerror="this.src='https://via.placeholder.com/60?text=Wegagen'">
                             <div class="flex-grow">
-                                <p class="text-xs font-bold text-red-800 mb-1" data-i18n="bank1Name">አሀዱ ባንክ (Ahadu Bank)</p>
+                                <p class="text-xs font-bold text-orange-700 mb-1" data-i18n="bank1Name">ወጋገን ባንክ (Wegagen Bank)</p>
                                 <div class="flex justify-between items-center gap-2">
-                                    <span id="acc1" class="font-mono text-sm font-bold text-stone-900">0045570810901</span>
+                                    <span id="acc1" class="font-mono text-sm font-bold text-stone-900">0848650030101</span>
                                     <button type="button" onclick="copyText('acc1')" class="text-xs bg-stone-900 hover:bg-stone-800 text-white px-3 py-1.5 rounded-lg cursor-pointer transition" data-i18n="copyBtn">ቅዳ</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Bank 2: Wegagen Bank -->
+                        <!-- Bank 2: Ahadu Bank (ሁለተኛው አሀዱ ባንክ) -->
                         <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm flex items-center gap-3.5">
-                            <!-- እዚህ ቦታ የባንክዎን ፎቶ/ሎጎ መቀየር ይችላሉ (wegagen.jpg) -->
-                            <img src="wegagen.jpg" alt="ወጋገን ባንክ" class="w-14 h-14 rounded-2xl object-cover border border-stone-200 shrink-0 bg-orange-50" onerror="this.src='https://via.placeholder.com/60?text=Wegagen'">
+                            <img src="ahadu.jpg" alt="አሀዱ ባንክ" class="w-14 h-14 rounded-2xl object-cover border border-stone-200 shrink-0 bg-red-50" onerror="this.src='https://via.placeholder.com/60?text=Ahadu'">
                             <div class="flex-grow">
-                                <p class="text-xs font-bold text-orange-700 mb-1" data-i18n="bank2Name">ወጋገን ባንክ (Wegagen Bank)</p>
+                                <p class="text-xs font-bold text-red-800 mb-1" data-i18n="bank2Name">አሀዱ ባንክ (Ahadu Bank)</p>
                                 <div class="flex justify-between items-center gap-2">
-                                    <span id="acc2" class="font-mono text-sm font-bold text-stone-900">0848650030101</span>
+                                    <span id="acc2" class="font-mono text-sm font-bold text-stone-900">0045570810901</span>
                                     <button type="button" onclick="copyText('acc2')" class="text-xs bg-stone-900 hover:bg-stone-800 text-white px-3 py-1.5 rounded-lg cursor-pointer transition" data-i18n="copyBtn">ቅዳ</button>
                                 </div>
                             </div>
@@ -282,4 +277,5 @@
                 <div class="text-center">
                     <h3 class="font-bold text-base text-stone-900 mb-4" data-i18n="socialHeader">የማህበራዊ ሚዲያ አድራሻዎቻችን</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                        <a href="https://t.me/re
+                        <a href="https://t.me/rehobot_menfesawi_mahiber" target="_blank" rel="noopener noreferrer" class="bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-brands fa-telegram text-base"
