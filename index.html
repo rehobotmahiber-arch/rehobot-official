@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ርኆቦት መንፈሳዊ ማህበር | Rehobot Spiritual Association</title>
+<meta name="description" content="ርኆቦት መንፈሳዊ ማህበር – የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ መንፈሳዊ ማህበር / Rehobot Spiritual Association – an Ethiopian Orthodox Tewahedo spiritual association.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&family=Noto+Serif+Ethiopic:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Noto Sans Ethiopic"', 'system-ui', 'sans-serif'],
+          display: ['"Noto Serif Ethiopic"', '"Noto Sans Ethiopic"', 'serif']
+        },
+        colors: {
+          forest: { 950: '#0A2A1F', 900: '#0E3B2C', 800: '#145040', 700: '#1B6652' },
+          gold: { 300: '#E6CB86', 400: '#D8B25E', 500: '#C8A24A', 600: '#A9852F' },
+          crimson: { 600: '#8C2230', 700: '#721A27' },
+          paper: '#F3F5F2'
+        }
+      }
+    }
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { font-family: "Noto Sans Ethiopic", system-ui, sans-serif; background: #F3F5F2; color: #1d2a25; }
+  :focus-visible { outline: 3px solid #C8A24A; outline-offset: 2px; border-radius: 6px; }
+  .hero-bg {
+    background:
+      radial-gradient(900px 420px at 85% 10%, rgba(200,162,74,.18), transparent 60%),
+      linear-gradient(160deg, #0A2A1F 0%, #0E3B2C 55%, #145040 100%);
+  }
+  .gold-rule { background: linear-gradient(90deg, #C8A24A, rgba(200,162,74,0)); height: 2px; }
+  .modal-pop { animation: pop .18s ease-out; }
+  @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+  .dot { animation: blink 1.2s infinite both; }
+  .dot:nth-child(2) { animation-delay: .2s; }
+  .dot:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 0%, 80%, 100% { opacity: .2; } 40% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .modal-pop, .dot { animation: none; }
+  }
+  #chatBody::-webkit-scrollbar { width: 6px; }
+  #chatBody::-webkit-scrollbar-thumb { background: #c9d3ce; border-radius: 6px; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ================= HEADER ================= -->
+<header class="sticky top-0 z-40 bg-forest-950/95 backdrop-blur border-b border-gold-500/30">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+    <a href="#home" class="flex items-center gap-3 min-w-0">
+      <img src="logo.png" alt="ርኆቦት logo" class="w-10 h-10 rounded-full object-cover bg-forest-800 ring-2 ring-gold-500/70" onerror="this.style.visibility='hidden'">
+      <span class="font-display font-bold text-white text-base sm:text-lg truncate" data-i18n="brand">ርኆቦት መንፈሳዊ ማህበር</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm text-white/80" aria-label="Main">
+      <a class="hover:text-gold-300" href="#home" data-i18n="nav_home">መነሻ</a>
+      <a class="hover:text-gold-300" href="#about" data-i18n="nav_about">ስለ እኛ</a>
+      <a class="hover:text-gold-300" href="#gallery" data-i18n="nav_gallery">ማዕከለ ሥዕል</a>
+      <a class="hover:text-gold-300" href="#faq" data-i18n="nav_faq">ጥያቄዎች</a>
+      <a class="hover:text-gold-300" href="#contact" data-i18n="nav_contact">ያግኙን</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button id="langBtn" type="button" class="px-3 h-9 rounded-full border border-gold-500/60 text-gold-300 text-sm font-semibold hover:bg-gold-500 hover:text-forest-950 transition-colors" aria-label="Switch language">
+        <i class="fa-solid fa-language mr-1.5"></i><span id="langLabel">English</span>
+      </button>
+      <button id="menuBtn" type="button" class="md:hidden w-9 h-9 rounded-full text-white hover:bg-white/10" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileNav" class="hidden md:hidden border-t border-white/10 bg-forest-950 px-4 py-3 text-white/90 text-sm" aria-label="Mobile">
+    <div class="flex flex-col">
+      <a class="py-2" href="#home" data-i18n="nav_home">መነሻ</a>
+      <a class="py-2" href="#about" data-i18n="nav_about">ስለ እኛ</a>
+      <a class="py-2" href="#gallery" data-i18n="nav_gallery">ማዕከለ ሥዕል</a>
+      <a class="py-2" href="#faq" data-i18n="nav_faq">ጥያቄዎች</a>
+      <a class="py-2" href="#contact" data-i18n="nav_contact">ያግኙን</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section id="home" class="hero-bg text-white">
+  <div class="max-w-6xl mx-auto px-4 py-14 md:py-24 grid md:grid-cols-5 gap-10 items-center">
+    <div class="md:col-span-3 order-2 md:order-1">
+      <span class="inline-block text-xs sm:text-sm font-semibold text-gold-300 border border-gold-500/50 rounded-full px-4 py-1.5 mb-6" data-i18n="hero_badge">የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ መንፈሳዊ ማህበር</span>
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight" data-i18n="hero_title">ርኆቦት መንፈሳዊ ማህበር</h1>
+      <div class="gold-rule w-40 my-6"></div>
+      <blockquote class="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl border-l-4 border-gold-500 pl-4" data-i18n="hero_verse">«እግዚአብሔር አሁን ስፍራ አሰፋልን፥ በምድርም ላይ እንበዛለን።» (ኦሪት ዘፍጥረት 26:22)</blockquote>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <button id="openChatHero" type="button" class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold px-6 py-3 rounded-xl transition-colors">
+          <i class="fa-solid fa-comments"></i><span data-i18n="hero_btn_ai">ስለ ማህበሩ AI ረዳትን ይጠይቁ</span>
+        </button>
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 border-2 border-gold-500 text-gold-300 hover:bg-gold-500 hover:text-forest-950 font-bold px-6 py-3 rounded-xl transition-colors">
+          <i class="fa-solid fa-hand-holding-heart"></i><span data-i18n="hero_btn_support">ድጋፍ ያድርጉ</span>
+        </a>
+      </div>
+    </div>
+    <div class="md:col-span-2 order-1 md:order-2 flex justify-center">
+      <div class="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full p-2 bg-gradient-to-br from-gold-300 via-gold-500 to-gold-600 shadow-2xl">
+        <div class="w-full h-full rounded-full bg-forest-900 flex items-center justify-center overflow-hidden">
+          <img src="logo.png" alt="ርኆቦት መንፈሳዊ ማህበር logo" class="w-full h-full object-cover" onerror="this.outerHTML='<i class=&quot;fa-solid fa-cross text-gold-400 text-6xl&quot;></i>'">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-2xl mb-10">
+      <h2 class="font-display font-bold text-3xl text-forest-900" data-i18n="about_title">ስለ ማህበሩ</h2>
+      <div class="gold-rule w-24 mt-3"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <article class="bg-white rounded-2xl border border-forest-900/10 p-7 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-forest-900 text-gold-400 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-eye"></i></div>
+        <h3 class="font-display font-bold text-xl text-forest-900 mb-3" data-i18n="vision_title">ራዕያችን (Our Vision)</h3>
+        <p class="leading-8 text-slate-700" data-i18n="vision_text">በኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን ትምህርትና ትውፊት ጸንተው፥ በመንፈሳዊ ሕይወት ያደጉ ምእመናን የሚገኙበት፥ ማህበረሰቡን በፍቅርና በአገልግሎት የሚያንጽ የተስፋፋ መንፈሳዊ ማህበር ሆኖ ማየት።</p>
+      </article>
+      <article class="bg-white rounded-2xl border border-forest-900/10 p-7 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-crimson-600 text-gold-300 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
+        <h3 class="font-display font-bold text-xl text-forest-900 mb-3" data-i18n="mission_title">ተልዕኳችን (Our Mission)</h3>
+        <p class="leading-8 text-slate-700" data-i18n="mission_text">የቤተ ክርስቲያንን ትምህርት ማስተማርና ማስፋፋት፥ መዝሙርና ጸሎትን ማበረታታት፥ አባላትን በአንድነት ማሰባሰብ፥ እንዲሁም የበጎ አድራጎትና የቤተ ክርስቲያን አገልግሎት ሥራዎችን ማከናወን።</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-2xl mb-10">
+      <h2 class="font-display font-bold text-3xl text-forest-900" data-i18n="gallery_title">የማህበሩ ማኅደር ፎቶዎች</h2>
+      <div class="gold-rule w-24 mt-3"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <figure>
+        <div class="aspect-square rounded-2xl overflow-hidden bg-forest-900/5 border border-forest-900/10 flex items-center justify-center relative">
+          <i class="fa-regular fa-image text-4xl text-forest-900/25 absolute"></i>
+          <img src="Photo1.jpn" alt="Archive photo 1" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <figcaption class="mt-3 text-sm text-slate-700 text-center" data-i18n="cap1">የማህበሩ መንፈሳዊ ጉባኤ</figcaption>
+      </figure>
+      <figure>
+        <div class="aspect-square rounded-2xl overflow-hidden bg-forest-900/5 border border-forest-900/10 flex items-center justify-center relative">
+          <i class="fa-regular fa-image text-4xl text-forest-900/25 absolute"></i>
+          <img src="photo2.jpn" alt="Archive photo 2" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <figcaption class="mt-3 text-sm text-slate-700 text-center" data-i18n="cap2">የአገልግሎትና የበጎ አድራጎት ጊዜያት</figcaption>
+      </figure>
+      <figure class="sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none lg:mx-0 w-full">
+        <div class="aspect-square rounded-2xl overflow-hidden bg-forest-900/5 border border-forest-900/10 flex items-center justify-center relative">
+          <i class="fa-regular fa-image text-4xl text-forest-900/25 absolute"></i>
+          <img src="photo3.jpn" alt="Archive photo 3" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <figcaption class="mt-3 text-sm text-slate-700 text-center" data-i18n="cap3">የአባላት ኅብረትና ጸሎት</figcaption>
+      </figure>
+    </div>
+
+    <a href="https://t.me/rehobot_menfesawi_mahiber" target="_blank" rel="noopener noreferrer"
+       class="mt-10 flex items-center gap-4 rounded-2xl bg-[#229ED9] hover:bg-[#1b8ec6] text-white p-5 sm:p-6 transition-colors">
+      <i class="fa-brands fa-telegram text-4xl sm:text-5xl"></i>
+      <span class="flex-1 min-w-0">
+        <span class="block font-bold text-lg" data-i18n="tg_title">የቴሌግራም ቻናላችንን ይቀላቀሉ</span>
+        <span class="block text-sm text-white/90" data-i18n="tg_sub">ተጨማሪ ፎቶዎችን፣ ትምህርቶችንና ማስታወቂያዎችን በቴሌግራም ያግኙ።</span>
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-2xl mb-10">
+      <h2 class="font-display font-bold text-3xl text-forest-900" data-i18n="faq_title">በተደጋጋሚ የሚጠየቁ ጥያቄዎች</h2>
+      <div class="gold-rule w-24 mt-3"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <article class="bg-white rounded-2xl border border-forest-900/10 p-6">
+        <h3 class="font-bold text-forest-900 text-lg mb-3 flex gap-3"><i class="fa-solid fa-circle-question text-gold-600 mt-1"></i><span data-i18n="q1">«ርኆቦት» ማለት ምን ማለት ነው?</span></h3>
+        <p class="leading-8 text-slate-700" data-i18n="a1">«ርኆቦት» ማለት «ሰፊ ስፍራ» ማለት ነው። ይስሐቅ የቆፈረው ጉድጓድ በተከታታይ ሲከራከሩበት ከቆየ በኋላ ጠብ ያልተነሣበትን ጉድጓድ ሲቆፍር «እግዚአብሔር አሁን ስፍራ አሰፋልን፥ በምድርም ላይ እንበዛለን» ብሎ ስሙን ርኆቦት አለው (ኦሪት ዘፍጥረት 26:22)። ማህበራችንም በዚህ ተስፋ የእግዚአብሔርን ስፍራ መስፋት የሚያምን ነው።</p>
+      </article>
+      <article class="bg-white rounded-2xl border border-forest-900/10 p-6">
+        <h3 class="font-bold text-forest-900 text-lg mb-3 flex gap-3"><i class="fa-solid fa-church text-gold-600 mt-1"></i><span data-i18n="q2">የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን ትውፊት ምንድን ነው?</span></h3>
+        <p class="leading-8 text-slate-700" data-i18n="a2">«ተዋሕዶ» ማለት የአምላክና የሰው አንድ መሆን ማለት ሲሆን፥ ቤተ ክርስቲያኒቱ ከጥንት የተላለፈውን ሐዋርያዊ እምነት፣ ቅዱሳት መጻሕፍትን፣ ጾምና ጸሎትን፣ ቅዳሴንና የቅዱስ ያሬድን ዜማ ጠብቃ የምትኖር ናት። ማህበራችን በዚህ ትምህርትና ትውፊት ይመራል።</p>
+      </article>
+      <article class="bg-white rounded-2xl border border-forest-900/10 p-6">
+        <h3 class="font-bold text-forest-900 text-lg mb-3 flex gap-3"><i class="fa-solid fa-user-plus text-gold-600 mt-1"></i><span data-i18n="q3">አባል ለመሆንና ለማገልገል ምን ማድረግ አለብኝ?</span></h3>
+        <p class="leading-8 text-slate-700" data-i18n="a3">በኦርቶዶክስ ተዋሕዶ እምነት የምትጸኑና ለማገልገል የምትፈልጉ ሁሉ አባል መሆን ትችላላችሁ። በቴሌግራም ቻናላችን ወይም በማኅበራዊ ገጾቻችን መልእክት በመላክ ፍላጎታችሁን ያሳውቁን፤ በትምህርት፣ በመዝሙር፣ በበጎ አድራጎትና በሌሎች አገልግሎቶች ልትሳተፉ ትችላላችሁ።</p>
+      </article>
+      <article class="bg-white rounded-2xl border border-forest-900/10 p-6">
+        <h3 class="font-bold text-forest-900 text-lg mb-3 flex gap-3"><i class="fa-solid fa-hand-holding-heart text-gold-600 mt-1"></i><span data-i18n="q4">የበጎ አድራጎትና የቤተ ክርስቲያን ሥራዎችን እንዴት መደገፍ እችላለሁ?</span></h3>
+        <p class="leading-8 text-slate-700" data-i18n="a4">በወጋገን ባንክ ወይም በአሀዱ ባንክ የማህበሩ ሒሳብ ቁጥሮች ድጋፍ ማድረግ ይችላሉ፤ ቁጥሮቹን በ«ያግኙን» ክፍል ውስጥ ባለው «ቅዳ» ቁልፍ በቀላሉ መቅዳት ይችላሉ። በጸሎት፣ በጊዜና በአገልግሎትም መደገፍ ይቻላል።</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUPPORT & CONTACT ================= -->
+<section id="contact" class="py-16 md:py-24 bg-forest-950 text-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-2xl mb-10">
+      <h2 class="font-display font-bold text-3xl" data-i18n="contact_title">ድጋፍና ያግኙን</h2>
+      <div class="gold-rule w-24 mt-3"></div>
+      <p class="mt-4 text-white/75 leading-8" data-i18n="contact_sub">የማህበሩን የበጎ አድራጎትና የቤተ ክርስቲያን ሥራዎች በባንክ ሒሳቦቻችን ይደግፉ።</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Wegagen -->
+      <div class="bg-white text-slate-800 rounded-2xl p-6 flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center overflow-hidden shrink-0">
+            <img src="wegagen.jpg" alt="Wegagen Bank logo" class="w-full h-full object-contain" onerror="this.outerHTML='<i class=&quot;fa-solid fa-building-columns text-slate-400 text-2xl&quot;></i>'">
+          </div>
+          <h3 class="font-bold text-lg text-forest-900">ወጋገን ባንክ (Wegagen Bank)</h3>
+        </div>
+        <div class="flex items-center justify-between gap-3 bg-paper rounded-xl border border-forest-900/10 px-4 py-3">
+          <div class="min-w-0">
+            <div class="text-xs text-slate-500" data-i18n="acct_label">የሒሳብ ቁጥር</div>
+            <div class="font-mono font-bold text-lg sm:text-xl tracking-wide break-all select-all" id="acct1">0848650030101</div>
+          </div>
+          <button type="button" class="copy-btn shrink-0 bg-forest-900 hover:bg-forest-700 text-white font-semibold px-4 py-2 rounded-lg" data-target="acct1">
+            <i class="fa-regular fa-copy mr-1.5"></i><span data-i18n="copy">ቅዳ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Ahadu -->
+      <div class="bg-white text-slate-800 rounded-2xl p-6 flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center overflow-hidden shrink-0">
+            <img src="ahadu.jpg" alt="Ahadu Bank logo" class="w-full h-full object-contain" onerror="this.outerHTML='<i class=&quot;fa-solid fa-building-columns text-slate-400 text-2xl&quot;></i>'">
+          </div>
+          <h3 class="font-bold text-lg text-forest-900">አሀዱ ባንክ (Ahadu Bank)</h3>
+        </div>
+        <div class="flex items-center justify-between gap-3 bg-paper rounded-xl border border-forest-900/10 px-4 py-3">
+          <div class="min-w-0">
+            <div class="text-xs text-slate-500" data-i18n="acct_label">የሒሳብ ቁጥር</div>
+            <div class="font-mono font-bold text-lg sm:text-xl tracking-wide break-all select-all" id="acct2">0045570810901</div>
+          </div>
+          <button type="button" class="copy-btn shrink-0 bg-forest-900 hover:bg-forest-700 text-white font-semibold px-4 py-2 rounded-lg" data-target="acct2">
+            <i class="fa-regular fa-copy mr-1.5"></i><span data-i18n="copy">ቅዳ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="font-display font-bold text-xl mt-14 mb-5" data-i18n="social_title">ማኅበራዊ ገጾቻችን</h3>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+      <li><a href="https://t.me/rehobot_menfesawi_mahiber" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-telegram text-2xl text-[#4cc3f5]"></i><span class="font-semibold">Telegram</span></a></li>
+      <li><a href="https://www.tiktok.com/@rehobot_menfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-tiktok text-2xl"></i><span class="font-semibold">TikTok</span></a></li>
+      <li><a href="https://www.facebook.com/rehobotmenfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-facebook text-2xl text-[#5b9bff]"></i><span class="font-semibold">Facebook</span></a></li>
+      <li><a href="https://www.youtube.com/@rehobot_menfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-youtube text-2xl text-[#ff5a5a]"></i><span class="font-semibold">YouTube</span></a></li>
+      <li><a href="https://www.instagram.com/rehobot_menfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-instagram text-2xl text-[#ff7ab8]"></i><span class="font-semibold">Instagram</span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="bg-forest-950 border-t border-white/10 text-white/60 text-sm">
+  <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+    © <span id="year"></span> <span data-i18n="footer">ርኆቦት መንፈሳዊ ማህበር – ሁሉም መብቶች የተጠበቁ ናቸው።</span>
+  </div>
+</footer>
+
+<!-- Floating AI button -->
+<button id="openChatFab" type="button" class="fixed bottom-5 right-5 z-30 w-14 h-14 rounded-full bg-gold-500 hover:bg-gold-400 text-forest-950 text-2xl shadow-xl flex items-center justify-center" aria-label="AI Assistant">
+  <i class="fa-solid fa-comments"></i>
+</button>
+
+<!-- ================= AI CHAT MODAL ================= -->
+<div id="chatModal" class="hidden fixed inset-0 z-50 bg-black/60 p-0 sm:p-4 items-end sm:items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+  <div class="modal-pop bg-white w-full sm:max-w-lg h-[85vh] sm:h-[600px] rounded-t-2xl sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+    <div class="bg-forest-900 text-white px-4 py-3 flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-gold-500 text-forest-950 flex items-center justify-center"><i class="fa-solid fa-robot"></i></div>
+      <div class="flex-1 min-w-0">
+        <div id="chatTitle" class="fo
