@@ -59,10 +59,10 @@
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
     <a href="#home" class="flex items-center gap-3 min-w-0">
       <img src="logo.png" alt="ርኆቦት logo" class="w-10 h-10 rounded-full object-cover bg-forest-800 ring-2 ring-gold-500/70" onerror="this.style.visibility='hidden'">
-      <span class="font-display font-bold text-white text-base sm:text-lg truncate" data-i18n="brand">ርኆቦት መንፈሳዊ ማህበር</span>
+      <span class="hidden sm:inline font-display font-bold text-white text-base sm:text-lg truncate" data-i18n="brand">ርኆቦት መንፈሳዊ ማህበር</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6 text-sm text-white/80" aria-label="Main">
+    <nav class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/80 overflow-x-auto whitespace-nowrap" aria-label="Main">
       <a class="hover:text-gold-300" href="#home" data-i18n="nav_home">መነሻ</a>
       <a class="hover:text-gold-300" href="#about" data-i18n="nav_about">ስለ እኛ</a>
       <a class="hover:text-gold-300" href="#gallery" data-i18n="nav_gallery">ማዕከለ ሥዕል</a>
@@ -70,24 +70,7 @@
       <a class="hover:text-gold-300" href="#contact" data-i18n="nav_contact">ያግኙን</a>
     </nav>
 
-    <div class="flex items-center gap-2">
-      <button id="langBtn" type="button" class="px-3 h-9 rounded-full border border-gold-500/60 text-gold-300 text-sm font-semibold hover:bg-gold-500 hover:text-forest-950 transition-colors" aria-label="Switch language">
-        <i class="fa-solid fa-language mr-1.5"></i><span id="langLabel">English</span>
-      </button>
-      <button id="menuBtn" type="button" class="md:hidden w-9 h-9 rounded-full text-white hover:bg-white/10" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
   </div>
-  <nav id="mobileNav" class="hidden md:hidden border-t border-white/10 bg-forest-950 px-4 py-3 text-white/90 text-sm" aria-label="Mobile">
-    <div class="flex flex-col">
-      <a class="py-2" href="#home" data-i18n="nav_home">መነሻ</a>
-      <a class="py-2" href="#about" data-i18n="nav_about">ስለ እኛ</a>
-      <a class="py-2" href="#gallery" data-i18n="nav_gallery">ማዕከለ ሥዕል</a>
-      <a class="py-2" href="#faq" data-i18n="nav_faq">ጥያቄዎች</a>
-      <a class="py-2" href="#contact" data-i18n="nav_contact">ያግኙን</a>
-    </div>
-  </nav>
 </header>
 
 <main>
@@ -151,23 +134,20 @@
       <figure>
         <div class="aspect-square rounded-2xl overflow-hidden bg-forest-900/5 border border-forest-900/10 flex items-center justify-center relative">
           <i class="fa-regular fa-image text-4xl text-forest-900/25 absolute"></i>
-          <img src="Photo1.jpn" alt="Archive photo 1" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+          <img src="Photo1.jpn" alt="" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
         </div>
-        <figcaption class="mt-3 text-sm text-slate-700 text-center" data-i18n="cap1">የማህበሩ መንፈሳዊ ጉባኤ</figcaption>
       </figure>
       <figure>
         <div class="aspect-square rounded-2xl overflow-hidden bg-forest-900/5 border border-forest-900/10 flex items-center justify-center relative">
           <i class="fa-regular fa-image text-4xl text-forest-900/25 absolute"></i>
-          <img src="photo2.jpn" alt="Archive photo 2" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+          <img src="photo2.jpn" alt="" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
         </div>
-        <figcaption class="mt-3 text-sm text-slate-700 text-center" data-i18n="cap2">የአገልግሎትና የበጎ አድራጎት ጊዜያት</figcaption>
       </figure>
       <figure class="sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none lg:mx-0 w-full">
         <div class="aspect-square rounded-2xl overflow-hidden bg-forest-900/5 border border-forest-900/10 flex items-center justify-center relative">
           <i class="fa-regular fa-image text-4xl text-forest-900/25 absolute"></i>
-          <img src="photo3.jpn" alt="Archive photo 3" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
+          <img src="photo3.jpn" alt="" class="relative w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'">
         </div>
-        <figcaption class="mt-3 text-sm text-slate-700 text-center" data-i18n="cap3">የአባላት ኅብረትና ጸሎት</figcaption>
       </figure>
     </div>
 
@@ -297,4 +277,18 @@
         </div>
         <div>
           <label for="fMessage" class="block text-sm font-semibold mb-1" data-i18n="f_message">መልእክት</label>
- 
+          <textarea id="fMessage" name="message" rows="6" required class="block w-full min-h-[150px] resize-y rounded-xl border-2 border-slate-300 bg-slate-50 px-4 py-3 text-base leading-7 text-slate-800 shadow-inner placeholder:text-slate-400 focus:border-forest-700 focus:bg-white focus:outline-none" placeholder="መልእክትዎን እዚህ ይጻፉ..." data-i18n-ph="ph_message"></textarea>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <button type="submit" class="inline-flex items-center justify-center gap-2 bg-forest-900 hover:bg-forest-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">
+            <i class="fa-solid fa-paper-plane"></i><span data-i18n="f_send">መልእክት ላክ</span>
+          </button>
+          <p class="text-xs text-slate-500 leading-6" data-i18n="f_note">ቁልፉን ሲጫኑ የኢሜይል መተግበሪያዎ በመልእክትዎ ተሞልቶ ይከፈታል።</p>
+        </div>
+      </form>
+    </div>
+
+    <h3 class="font-display font-bold text-xl mt-14 mb-5" data-i18n="social_title">ማኅበራዊ ገጾቻችን</h3>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+      <li><a href="https://t.me/rehobot_menfesawi_mahiber" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-telegram text-2xl text-[#4cc3f5]"></i><span class="font-semibold">Telegram</span></a></li>
+      <li><a href="https://www.tiktok.com/@rehobot_menfesawi" target="_blank" r
