@@ -38,25 +38,16 @@
       linear-gradient(160deg, #0A2A1F 0%, #0E3B2C 55%, #145040 100%);
   }
   .gold-rule { background: linear-gradient(90deg, #C8A24A, rgba(200,162,74,0)); height: 2px; }
-  .modal-pop { animation: pop .18s ease-out; }
-  @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
-  .dot { animation: blink 1.2s infinite both; }
-  .dot:nth-child(2) { animation-delay: .2s; }
-  .dot:nth-child(3) { animation-delay: .4s; }
-  @keyframes blink { 0%, 80%, 100% { opacity: .2; } 40% { opacity: 1; } }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .modal-pop, .dot { animation: none; }
   }
-  #chatBody::-webkit-scrollbar { width: 6px; }
-  #chatBody::-webkit-scrollbar-thumb { background: #c9d3ce; border-radius: 6px; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 </head>
 <body class="antialiased">
 
-<!-- ================= HEADER (NO LANGUAGE BUTTON, NO MOBILE SIDEBAR/DRAWER) ================= -->
+<!-- ================= HEADER ================= -->
 <header class="sticky top-0 z-40 bg-forest-950/95 backdrop-blur border-b border-gold-500/30">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
     <a href="#home" class="flex items-center gap-3 shrink-0">
@@ -84,9 +75,9 @@
       <div class="gold-rule w-40 my-6"></div>
       <blockquote class="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl border-l-4 border-gold-500 pl-4">«እግዚአብሔር አሁን ስፍራ አሰፋልን፥ በምድርም ላይ እንበዛለን።» (ኦሪት ዘፍጥረት 26:22)</blockquote>
       <div class="mt-9 flex flex-col sm:flex-row gap-3">
-        <button id="openChatHero" type="button" class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold px-6 py-3 rounded-xl transition-colors cursor-pointer">
-          <i class="fa-solid fa-comments"></i><span>ስለ ማህበሩ AI ረዳትን ይጠይቁ</span>
-        </button>
+        <a href="#about" class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold px-6 py-3 rounded-xl transition-colors">
+          <i class="fa-solid fa-book-open"></i><span>ስለ ማህበሩ ይወቁ</span>
+        </a>
         <a href="#contact" class="inline-flex items-center justify-center gap-2 border-2 border-gold-500 text-gold-300 hover:bg-gold-500 hover:text-forest-950 font-bold px-6 py-3 rounded-xl transition-colors">
           <i class="fa-solid fa-hand-holding-heart"></i><span>ድጋፍ ያድርጉ</span>
         </a>
@@ -124,7 +115,7 @@
   </div>
 </section>
 
-<!-- ================= GALLERY (CLEAN SQUARE IMAGES, NO TEXT OVERLAYS, photo1.jpg / photo2.jpg / photo3.jpg) ================= -->
+<!-- ================= GALLERY ================= -->
 <section id="gallery" class="py-16 md:py-24 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <div class="max-w-2xl mb-10">
@@ -235,7 +226,7 @@
       </div>
     </div>
 
-    <!-- Direct Email & Contact Form (WITH CLEAR VISIBLE MESSAGE TEXTAREA) -->
+    <!-- Direct Email & Contact Form -->
     <div class="mt-12 grid lg:grid-cols-5 gap-6 items-start">
       <div class="lg:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5">
         <h3 class="font-display font-bold text-xl text-gold-300">ቀጥታ መገናኛ</h3>
@@ -252,9 +243,6 @@
             <i class="fa-regular fa-copy mr-1"></i><span>ቅዳ</span>
           </button>
         </div>
-        <button type="button" id="openChatContact" class="w-full flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold py-3 px-4 rounded-xl transition-colors cursor-pointer">
-          <i class="fa-solid fa-robot"></i><span>AI ረዳትን ይጠይቁ</span>
-        </button>
       </div>
 
       <form id="contactForm" class="lg:col-span-3 bg-white text-slate-800 rounded-2xl p-6 space-y-4">
@@ -287,4 +275,35 @@
       <li><a href="https://www.tiktok.com/@rehobot_menfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-tiktok text-2xl"></i><span class="font-semibold">TikTok</span></a></li>
       <li><a href="https://www.facebook.com/rehobotmenfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-facebook text-2xl text-[#5b9bff]"></i><span class="font-semibold">Facebook</span></a></li>
       <li><a href="https://www.youtube.com/@rehobot_menfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-youtube text-2xl text-[#ff5a5a]"></i><span class="font-semibold">YouTube</span></a></li>
-      <li><a href="https://www.instagram.com/rehobot_menfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-x
+      <li><a href="https://www.instagram.com/rehobot_menfesawi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-3 transition-colors"><i class="fa-brands fa-instagram text-2xl text-[#ff7ab8]"></i><span class="font-semibold">Instagram</span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="bg-forest-950 border-t border-white/10 text-white/60 text-sm">
+  <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+    © <span id="year"></span> <span>ርኆቦት መንፈሳዊ ማህበር – ሁሉም መብቶች የተጠበቁ ናቸው።</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Copy account number / email ---------- */
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('clic
